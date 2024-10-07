@@ -11,6 +11,7 @@ db.sqlite3
 
 # Archivos estáticos y medios generados
 /media/
+staticfiles/
 
 # Archivos de configuración de editores
 .vscode/
