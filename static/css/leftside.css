@@ -33,7 +33,7 @@
 
     --color5: 189, 232, 202;
     /*rosa*/
-    --color-interactive:255,255,255;
+    --color-interactive:255,255,255 ;
     --circle-size: 60%;
     --blending: hard-light;
   }
@@ -179,6 +179,82 @@
 
       opacity: 1;
     }
+    .g6 {
+        position: absolute;
+        background: radial-gradient(circle at center, rgba(183,183,183) 0, rgba(183,183,183, 0) 50%) no-repeat;
+        mix-blend-mode: var(--blending);
+  
+        width: calc(var(--circle-size) * 2);
+        height: calc(var(--circle-size) * 2);
+        top: calc(50% - var(--circle-size));
+        left: calc(50% - var(--circle-size));
+  
+        transform-origin: calc(50% - 480px);
+        animation: moveInCircle 10s reverse infinite;
+  
+        opacity: 1;
+      }
+
+      .g7 {
+        position: absolute;
+        background: radial-gradient(circle at center, rgba(var(--color2), 0.8) 0, rgba(var(--color2), 0) 50%) no-repeat;
+        mix-blend-mode: var(--blending);
+  
+        width: var(--circle-size);
+        height: var(--circle-size);
+        top: calc(50% - var(--circle-size) / 2);
+        left: calc(50% - var(--circle-size) / 2);
+  
+        transform-origin: calc(50% - 400px);
+        animation: moveInCircle 0s reverse infinite;
+  
+        opacity: 1;
+      }
+      .g8 {
+        position: absolute;
+        background: radial-gradient(circle at center, rgb(255, 1, 1) 0, rgba(175, 175, 175, 0)50%) no-repeat;
+        mix-blend-mode: var(--blending);
+  
+        width: var(--circle-size);
+        height: var(--circle-size);
+        top: calc(50% - var(--circle-size) / 2);
+        left: calc(100% - var(--circle-size) / 2);
+  
+        transform-origin: calc(50% - 150px);
+        animation: moveInCircle 5s reverse infinite;
+  
+        opacity: 1;
+      }
+      .g9 {
+        position: absolute;
+        background: radial-gradient(circle at center, rgba(var(--color2), 0.8) 0, rgba(var(--color2), 0) 50%) no-repeat;
+        mix-blend-mode: var(--blending);
+  
+        width: var(--circle-size);
+        height: var(--circle-size);
+        top: calc(50% - var(--circle-size) / 2);
+        left: calc(50% - var(--circle-size) / 2);
+  
+        transform-origin: calc(50% - 400px);
+        animation: moveInCircle 20s reverse infinite;
+  
+        opacity: 1;
+      }
+      .g10 {
+        position: absolute;
+        background: radial-gradient(circle at center, rgba(var(--color2), 0.8) 0, rgba(var(--color2), 0) 50%) no-repeat;
+        mix-blend-mode: var(--blending);
+  
+        width: var(--circle-size);
+        height: var(--circle-size);
+        top: calc(50% - var(--circle-size) / 2);
+        left: calc(50% - var(--circle-size) / 2);
+  
+        transform-origin: calc(50% - 400px);
+        animation: moveInCircle 20s reverse infinite;
+  
+        opacity: 1;
+      }
 
     .interactive {
       position: absolute;
