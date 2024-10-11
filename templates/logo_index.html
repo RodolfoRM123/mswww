@@ -1,3 +1,54 @@
-<div class="absolute inset-0 z-10 bg-red-500 opacity-75">
-    <h3>simply</h3><h3 id="target"></h3>
+<div class="absolute inset-0 z-10 bg-red-500 opacity-75  flex justify-center">
+    <div class="grid grid-cols-1 gap-8 w-10/12">
+        <div>
+            <h3>simply</h3>
+        </div>
+        <div>
+            <h3 id="target"></h3>
+        </div>
+    </div>
 </div>
+
+<script>    
+    const target = document.getElementById("target");
+    let array = ["simple", "clear", "smart", "strong"];
+    let wordIndex = 0;
+    let letterIndex = 0;
+
+    const createLetter = () => {
+        const letter = document.createElement("span");
+        target.appendChild(letter);
+
+        letter.classList.add("letter");
+        letter.style.opacity = '0';
+        letter.style.animation = "anim 5s ease forwards";
+        letter.textContent = array[wordIndex][letterIndex];
+
+        setTimeout(() => {
+            letter.remove();
+        }, 2000);
+    };
+
+    const loop = () => {
+        setTimeout(() => {
+            if (wordIndex >= array.length) {
+                wordIndex = 0;
+                letterIndex = 0;
+                loop();
+
+            } else if (letterIndex < array[wordIndex].length) {
+                createLetter();
+                letterIndex++;
+                loop();
+
+            } else {
+                letterIndex = 0;
+                wordIndex++;
+                setTimeout(() => {
+                    loop();
+                }, 2000);
+            }
+        }, 80);
+    }
+    loop();
+</script>
