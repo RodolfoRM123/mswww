@@ -6,8 +6,12 @@
 
 
 {% block content %}
-<div class="fixed top-16 left-64 h-5/6 w-3/5 rounded-lg backdrop-opacity-10 backdrop-invert flex justify-center  "
-    style="backdrop-filter: blur(180.8px);" id="scroll_b">
+
+
+{% include "logo_index.html" %}
+
+<div class="fixed top-16 left-64 h-5/6 w-3/5 rounded-lg backdrop-opacity-10 backdrop-invert flex justify-center  no-scrollbar"
+    style="backdrop-filter: blur(10.8px);" id="scroll_b">
     <div class="grid grid-cols-1 gap-8 w-10/12">
         <div class="overflow-hidden rounded-lg w-full mt-28 h-80 bg-gray-200" id="miDiv">as</div>
         <div class="overflow-hidden rounded-lg w-full h-80 bg-gray-200">as</div>
@@ -15,36 +19,7 @@
     </div>
 </div>
 <script>
-    const contenedor = document.getElementById('scroll_b');
-    const miDiv = document.getElementById('miDiv');
-
-// Recuperar tamaño guardado del localStorage o usar tamaño original
-let tamañoOriginal = 300; // Tamaño original
-let tamañoActual = parseInt(localStorage.getItem('tamañoDiv')) || tamañoOriginal; // Tamaño actual
-
-// Establecer tamaño inicial
-miDiv.style.width = tamañoActual + 'px';
-miDiv.style.height = tamañoActual + 'px';
-
-contenedor.addEventListener('scroll', () => {
-  const scrollTop = contenedor.scrollTop;
-
-  if (scrollTop > 0) {
-    // Incrementar el tamaño cuando se baja
-    tamañoActual = tamañoOriginal + scrollTop;
-    miDiv.style.width = tamañoActual + 'px';
-    miDiv.style.height = tamañoActual + 'px';
-  } else {
-    // Regresar al tamaño original cuando se sube
-    tamañoActual = tamañoOriginal;
-    miDiv.style.width = tamañoOriginal + 'px';
-    miDiv.style.height = tamañoOriginal + 'px';
-  }
-
-  // Guardar el tamaño actual en localStorage
-  localStorage.setItem('tamañoDiv', tamañoActual);
-  console.log(`Tamaño del div: ${tamañoActual}px`);
-});
+ 
 </script>
 
 
