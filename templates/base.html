@@ -24,33 +24,31 @@
 
 <body>
   {% include "navbar.html" %}
+<!-- document.addEventListener("DOMContentLoaded", function () {
+    const toggleButton = document.getElementById('icon-toggle');
+    const menu = document.getElementById('menu'); // El div del menú
+    const icon = document.getElementById('icon');
+    const menuItemsText = document.querySelectorAll('#menu p'); // Selecciona todos los textos del menú
 
-  <div class="gradient-bg">
-    <svg xmlns="">
-      <defs>
-        <filter id="goo">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
-          <feBlend in="SourceGraphic" in2="goo" />
-        </filter>
-      </defs>
-    </svg>
-    <div class="gradients-container">
-      <div class="g1"></div>
-      <div class="g2"></div>
-      <div class="g3"></div>
-      <div class="g4"></div>
-      <div class="g5"></div>
-      <div class="g6"></div>
-      <div class="g7"></div>
-      <div class="g8"></div>
-      <div class="g9"></div>
-      <div class="g10"></div>
+    toggleButton.addEventListener('click', function () {
+        // Alternar el estado del menú (abierto/cerrado)
+        menu.classList.toggle('menu-open');
 
+        // Si está abierto, mostramos los nombres; si está cerrado, los ocultamos con transiciones suaves
+        menuItemsText.forEach((item) => {
+            item.classList.toggle('opacity-0');
+        });
 
-      <div class="interactive"></div>
-    </div>
-  </div>
+        // Alternar el ícono del botón
+        if (icon.classList.contains('bx-menu')) {
+            icon.classList.remove('bx-menu');
+            icon.classList.add('bx-x'); // Cambia al icono de cerrar
+        } else {
+            icon.classList.remove('bx-x');
+            icon.classList.add('bx-menu'); // Cambia al icono de menú
+        }
+    });
+}); -->
 
   {% include "leftside.html" %}
   {% include "rightside.html" %}
@@ -61,6 +59,7 @@
 
 
 </body>
+<script src="{%  static  'js/index.js'  %}"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 

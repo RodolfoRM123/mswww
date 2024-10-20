@@ -1,0 +1,557 @@
+
+*{
+    
+    font-family: "Be Vietnam Pro", sans-serif;
+    
+}
+.text-container {
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    font-size: 150px;
+    color: white;
+    opacity: 0.8;
+    user-select: none;
+    text-shadow: 1px 1px rgba(255,255,225, 0.1);
+
+    letter-spacing: 0.19em;
+  }
+
+  :root {
+    --color-bg1: rgb(45, 103, 150);
+    --color-bg2: rgb(255, 255, 255);
+    /*gris*/
+    --color1: 255,255,255;
+    /*verde fuerte*/
+    --color2: 22, 66, 60;
+    /*verde claro*/
+    --color3: 255,255,255;
+    /*amarrillo*/
+    --color4: 215, 195, 241;
+
+    --color5: 189, 232, 202;
+    /*rosa*/
+    --color-interactive:255,255,255 ;
+    --circle-size: 60%;
+    --blending: hard-light;
+  }
+
+  @keyframes moveInCircle {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    50% {
+      transform: rotate(180deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes moveVertical {
+    0% {
+      transform: translateY(-50%);
+    }
+
+    50% {
+      transform: translateY(50%);
+    }
+
+    100% {
+      transform: translateY(-50%);
+    }
+  }
+
+  @keyframes moveHorizontal {
+    0% {
+      transform: translateX(-50%) translateY(-10%);
+    }
+
+    50% {
+      transform: translateX(50%) translateY(10%);
+    }
+
+    100% {
+      transform: translateX(-50%) translateY(-10%);
+    }
+  }
+
+  .gradient-bg {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
+    top: 0;
+    left: 0;
+
+    svg {
+      display: none;
+    }
+
+
+    .gradients-container {
+      filter: url(#goo) blur(40px);
+      width: 100%;
+      height: 100%;
+    }
+
+    .g1 {
+      position: absolute;
+      background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 50%) no-repeat;
+      mix-blend-mode: var(--blending);
+
+      width: var(--circle-size);
+      height: var(--circle-size);
+      top: calc(50% - var(--circle-size) / 2);
+      left: calc(50% - var(--circle-size) / 2);
+
+      transform-origin: center center;
+      animation: moveInCircle 30s ease infinite;
+
+      opacity: 1;
+    }
+
+    .g2 {
+      position: absolute;
+      background: radial-gradient(circle at center, rgba(var(--color2), 0.8) 0, rgba(var(--color2), 0) 50%) no-repeat;
+      mix-blend-mode: var(--blending);
+
+      width: var(--circle-size);
+      height: var(--circle-size);
+      top: calc(50% - var(--circle-size) / 2);
+      left: calc(50% - var(--circle-size) / 2);
+
+      transform-origin: calc(50% - 400px);
+      animation: moveVertical 20s reverse infinite;
+
+      opacity: 1;
+    }
+
+    .g3 {
+      position: absolute;
+      background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 50%) no-repeat;
+      mix-blend-mode: var(--blending);
+
+      width: var(--circle-size);
+      height: var(--circle-size);
+      top: calc(50% - var(--circle-size) / 2 + 200px);
+      left: calc(50% - var(--circle-size) / 2 - 500px);
+
+      transform-origin: calc(50% + 400px);
+      animation: moveHorizontal 40s linear infinite;
+
+      opacity: 1;
+    }
+
+    .g4 {
+      position: absolute;
+      background: radial-gradient(circle at center, rgba(var(--color2), 0.8) 0, rgba(var(--color2), 0) 50%) no-repeat;
+      mix-blend-mode: var(--blending);
+
+      width: var(--circle-size);
+      height: var(--circle-size);
+      top: calc(50% - var(--circle-size) / 2);
+      left: calc(50% - var(--circle-size) / 2);
+
+      transform-origin: calc(50% - 200px);
+      animation: moveHorizontal 40s ease infinite;
+
+      opacity: 0.7;
+    }
+
+    .g5 {
+      position: absolute;
+      background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 50%) no-repeat;
+      mix-blend-mode: var(--blending);
+
+      width: calc(var(--circle-size) * 2);
+      height: calc(var(--circle-size) * 2);
+      top: calc(50% - var(--circle-size));
+      left: calc(50% - var(--circle-size));
+
+      transform-origin: calc(50% - 800px) calc(50% + 200px);
+      animation: moveVertical 20s ease infinite;
+
+      opacity: 1;
+    }
+    .g6 {
+        position: absolute;
+        background: radial-gradient(circle at center, rgba(var(--color2), 0.8) 0, rgba(var(--color2), 0) 50%) no-repeat;
+        mix-blend-mode: var(--blending);
+  
+        width: calc(var(--circle-size) * 2);
+        height: calc(var(--circle-size) * 2);
+        top: calc(50% - var(--circle-size));
+        left: calc(50% - var(--circle-size));
+  
+        transform-origin: calc(50% - 480px);
+        animation: moveInCircle 10s reverse infinite;
+  
+        opacity: 1;
+      }
+
+      .g7 {
+        position: absolute;
+        background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 50%) no-repeat;
+        mix-blend-mode: var(--blending);
+  
+        width: var(--circle-size);
+        height: var(--circle-size);
+        top: calc(50% - var(--circle-size) / 2);
+        left: calc(50% - var(--circle-size) / 2);
+  
+        transform-origin: calc(50% - 400px);
+        animation: moveInCircle 0s reverse infinite;
+  
+        opacity: 1;
+      }
+      .g8 {
+        position: absolute;
+        background: radial-gradient(circle at center, rgba(var(--color2), 0.8) 0, rgba(var(--color2), 0) 50%) no-repeat;
+        mix-blend-mode: var(--blending);
+  
+        width: var(--circle-size);
+        height: var(--circle-size);
+        top: calc(50% - var(--circle-size) / 2);
+        left: calc(50% - var(--circle-size) / 2);
+  
+        transform-origin: calc(50% - 100px);
+        animation: moveVertical 200s reverse infinite;
+  
+        opacity: 1;
+      }
+      .g9 {
+        position: absolute;
+        background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 50%) no-repeat;
+        mix-blend-mode: var(--blending);
+  
+        width: var(--circle-size);
+        height: var(--circle-size);
+        top: calc(50% - var(--circle-size) / 2);
+        left: calc(50% - var(--circle-size) / 2);
+  
+        transform-origin: calc(50% - 400px);
+        animation: moveHorizontal 20s reverse infinite;
+  
+        opacity: 1;
+      }
+      .g10 {
+        position: absolute;
+        background: radial-gradient(circle at center, rgba(var(--color2), 0.8) 0, rgba(var(--color2), 0) 50%) no-repeat;
+        mix-blend-mode: var(--blending);
+  
+        width: var(--circle-size);
+        height: var(--circle-size);
+        top: calc(50% - var(--circle-size) / 2);
+        left: calc(50% - var(--circle-size) / 2);
+  
+        transform-origin: calc(50% - 400px);
+        animation: moveHorizontal 20s reverse infinite;
+  
+        opacity: 1;
+      }
+
+    .interactive {
+      position: absolute;
+      /*background: radial-gradient(circle at center, rgba(var(--color-interactive), 0.8) 0, rgba(var(--color-interactive), 0) 50%) no-repeat;*/
+      mix-blend-mode: var(--blending);
+      background-color: rgb(45, 103, 150);
+      position: fixed;
+
+
+      filter: blur(100px);
+
+      width: 100%;
+      height: 100%;
+
+
+      
+    }
+  }
+
+  .cont_1 {
+    top: 90%;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  .ori {
+    position: relative;
+    width: 1%;
+    height: 5px;
+    transform: rotate(134deg);
+    margin: 0 53%;
+  }
+
+  div.arrow {
+
+    width: 5vmin;
+    height: 5vmin;
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    top: 90%;
+    /*transform: rotate(134deg);*/
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      border-width: .8vmin .8vmin 0 0;
+      border-style: solid;
+      border-color: #fafafa;
+      transition: .2s ease;
+      display: block;
+      transform-origin: 100% 0;
+    }
+
+
+    &:after {
+      content: '';
+      float: left;
+      position: relative;
+      top: -100%;
+      width: 100%;
+      height: 100%;
+      border-width: 0 .8vmin 0 0;
+      border-style: solid;
+      border-color: #fafafa;
+      transform-origin: 100% 0;
+      transition: .2s ease;
+    }
+
+    &:hover::after {
+      transform: rotate(45deg);
+      border-color: orange;
+      height: 120%;
+    }
+
+    &:hover::before {
+      border-color: orange;
+      transform: scale(.8);
+
+    }
+
+  }
+
+
+  @-webkit-keyframes heartbeat {
+    from {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      -webkit-transform-origin: center center;
+      -webkit-animation-timing-function: ease-out;
+      animation-timing-function: ease-out
+    }
+
+    10% {
+      -webkit-transform: scale(.91);
+      transform: scale(.91);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in
+    }
+
+    17% {
+      -webkit-transform: scale(.98);
+      transform: scale(.98);
+      -webkit-animation-timing-function: ease-out;
+      animation-timing-function: ease-out
+    }
+
+    33% {
+      -webkit-transform: scale(.87);
+      transform: scale(.87);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in
+    }
+
+    45% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+      animation-timing-function: ease-out
+    }
+  }
+
+  @keyframes heartbeat {
+    from {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      -webkit-transform-origin: center center;
+      transform-origin: center center;
+      -webkit-animation-timing-function: ease-out;
+      animation-timing-function: ease-out
+    }
+
+    10% {
+      -webkit-transform: scale(.91);
+      transform: scale(.91);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in
+    }
+
+    17% {
+      -webkit-transform: scale(.98);
+      transform: scale(.98);
+      -webkit-animation-timing-function: ease-out;
+      animation-timing-function: ease-out
+    }
+
+    33% {
+      -webkit-transform: scale(.87);
+      transform: scale(.87);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in
+    }
+
+    45% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+      animation-timing-function: ease-out
+    }
+  }
+
+  .heartbeat {
+    -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
+    animation: heartbeat 1.5s ease-in-out infinite both;
+  }
+
+
+
+
+  #container {
+    color:#ffffff;
+    text-transform: uppercase;
+    font-size:30px;
+  }
+  
+  #flip {
+    height:50px;
+    overflow:hidden;
+  }
+  
+  #flip > div > div {
+    color:#fff;
+    padding:4px 7px;
+    height:45px;
+    margin-bottom:45px;
+    display:inline-block;
+    margin-left: 50px;
+    border-radius: 10px;
+  }
+  
+  #flip div:first-child {
+    animation: show 5s linear 1 forwards;
+  }
+  
+  #flip div div {
+    background:#42c58a;
+  }
+  #flip div:first-child div {
+    background:#4ec7f3;
+  }
+  #flip div:last-child div {
+    background:#DC143C;
+  }
+  @keyframes show {
+    0% {margin-top:-270px;}
+    5% {margin-top:-180px;}
+    33% {margin-top:-180px;}
+    38% {margin-top:-90px;}
+    66% {margin-top:-90px;}
+    71% {margin-top:0px;}
+    99.99% {margin-top:0px;}
+    100% {margin-top:-270px;}
+  }
+
+
+#logo{
+    width: 200px;
+
+}
+
+
+  /* Ocultar la barra de scroll */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none; /* Para navegadores basados en WebKit como Chrome, Safari */
+  }
+  
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE y Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .grande {
+    width: 200px;
+    height: 200px;
+}
+
+#scroll_b{
+    overflow-y: auto;
+}
+
+
+
+
+.logo-container ul li {
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);    
+  align-items: center;
+  justify-content: center;
+}
+.logo-container ul li a{
+text-decoration:none !important;
+display: inline-block;
+}
+.logo-2 h2 {
+  margin-left: 12px;
+  line-height:1;
+}
+.logo-2 p {
+  color: #34495e;
+  font-weight: 600;  
+  text-decoration:none !important;
+}
+
+
+
+#target {
+  display: flex;
+  width: 100px;
+  text-align: left;
+  animation: color 30s alternate infinite;
+  perspective: 200px;
+  transform: translateX(26px);
+
+}
+.word {
+  position: absolute;
+}
+@keyframes color {
+  0% {color: blue;}
+  50% {color: #ec006e;}
+  100% {color: blue;}
+}
+.letter {
+  transform: translateZ(100px);
+}
+@keyframes anim {
+  25% {
+    transform: translateZ(0px);
+    opacity: 1;
+  }
+  32% {
+    opacity: 0;
+    transform: translateZ(-180px) translateX(200px);
+  }
+}

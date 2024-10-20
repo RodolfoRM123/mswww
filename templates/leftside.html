@@ -1,24 +1,29 @@
-<div class="fixed bottom-0 sm:top-0 md:top-0 lg:top-0 xl:top-0 left-0 w-screen xs:w-56 sm:w-56 md:w-56 lg:w-56 h-20 xs:h-screen sm:h-screen md:h-screen lg:h-screen mt-16 z-0 backdrop-opacity-10 backdrop-invert" style=" ">
-    <div class="grid grid-cols-4 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-1 gap-4 pl-0 sm:pl-7 md:pl-7 lg:pl-7 xl:pl-7">
-        <div class="flex flex-col items-center sm:flex-row sm:items-start sm:justify-start">
+<div id="menu" class="fixed bottom-0 sm:top-0 md:top-0 lg:top-0 xl:top-0 left-0 w-screen xs:w-screen sm:w-16 md:w-16 lg:w-56 xl:w-56 h-20 xs:h-screen sm:h-screen md:h-screen lg:h-screen mt-16 z-0 backdrop-opacity-10 backdrop-invert z-40 transition-all duration-500 ease-in-out transform menu-closed">
+    <div class="grid grid-cols-4 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-1 gap-4 pl-0 sm:pl-7 md:pl-7 lg:pl-7 xl:pl-7 sm:mt-5 md:mt-5 lg:mt-5 xl:mt-5 transition-all duration-500 ease-in-out">
+
+        <!-- Opción 1 -->
+        <div class="flex flex-col items-center sm:flex-row sm:items-start sm:justify-start transition-all duration-500 ease-in-out hover:text-gray-700 group">
             <i class='bx bx-home-heart text-4xl'></i>
-            <p class="text-md font-semibold sm:ml-2">Home</p>
-        </div>
-        
-        <div class="flex flex-col items-center sm:flex-row sm:items-start sm:justify-start">
-            <i class='bx bx-code-alt text-4xl'></i>
-            <p class="text-md font-semibold sm:ml-2">Servicios</p>
-        </div>
-        
-        <div class="flex flex-col items-center sm:flex-row sm:items-start sm:justify-start">
-            <i class='bx bx-trending-up text-4xl'></i>
-            <p class="text-md font-semibold sm:ml-2">Proyectos</p>
+            <p class="text-md font-semibold mt-2 sm:mt-0 sm:ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">Home</p>
         </div>
 
-        <div class="flex flex-col items-center sm:flex-row sm:items-start sm:justify-start">
-            <i class='bx bx-user-voice text-4xl'></i>
-            <p class="text-md font-semibold sm:ml-2">Contacto</p>
+        <!-- Opción 2 -->
+        <div class="flex flex-col items-center sm:flex-row sm:items-start sm:justify-start transition-all duration-500 ease-in-out hover:text-gray-700 group">
+            <i class='bx bx-code-alt text-4xl'></i>
+            <p class="text-md font-semibold mt-2 sm:mt-0 sm:ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">Servicios</p>
         </div>
-        
+
+        <!-- Opción 3 -->
+        <div class="flex flex-col items-center sm:flex-row sm:items-start sm:justify-start transition-all duration-500 ease-in-out hover:text-gray-700 group">
+            <i class='bx bx-trending-up text-4xl'></i>
+            <p class="text-md font-semibold mt-2 sm:mt-0 sm:ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">Proyectos</p>
+        </div>
+
+        <!-- Opción 4 -->
+        <div class="flex flex-col items-center sm:flex-row sm:items-start sm:justify-start transition-all duration-500 ease-in-out hover:text-gray-700 group">
+            <i class='bx bx-user-voice text-4xl'></i>
+            <p class="text-md font-semibold mt-2 sm:mt-0 sm:ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">Contacto</p>
+        </div>
+
     </div>
 </div>
