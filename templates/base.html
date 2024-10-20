@@ -47,22 +47,6 @@
       <div class="g9"></div>
       <div class="g10"></div>
 
-        // Si está abierto, mostramos los nombres; si está cerrado, los ocultamos con transiciones suaves
-        menuItemsText.forEach((item) => {
-            item.classList.toggle('opacity-0');
-        });
-
-        // Alternar el ícono del botón
-        if (icon.classList.contains('bx-menu')) {
-            icon.classList.remove('bx-menu');
-            icon.classList.add('bx-x'); // Cambia al icono de cerrar
-        } else {
-            icon.classList.remove('bx-x');
-            icon.classList.add('bx-menu'); // Cambia al icono de menú
-        }
-    });
-}); -->
-
   {% include "leftside.html" %}
   {% include "rightside.html" %}
 
