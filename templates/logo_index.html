@@ -1,54 +1,60 @@
-<div class="absolute inset-0 z-10 bg-red-500 opacity-75  flex justify-center">
-    <div class="grid grid-cols-1 gap-8 w-10/12">
-        <div>
-            <h3>simply</h3>
+<div class="absolute inset-0 z-10 flex justify-center" id="fondo">
+    <div class="grid grid-cols-1 gap-8 w-10/12" id="h">
+        <div class="logo-container">
+            <h1 id="page-logo">MSWWW</h1>
         </div>
-        <div>
-            <h3 id="target"></h3>
+        <div class="container">
+            <div id="globo2" class="" style=" visibility: hidden;"></div>
+            <p id="fra2" class="" style=" visibility: hidden;">Optimiza Tu Vida</p>
         </div>
     </div>
 </div>
+<script>
+    setTimeout(() => {
+        const elemento = document.getElementById('globo2');
+        elemento.id = 'globo'; // Cambia 'nuevoID' al id que deseas asignar
+        const elemento2 = document.getElementById('fra2');
+        elemento2.id = 'fra'; // Cambia 'nuevoID' al id que deseas asignar
+    }, 600);
+    setTimeout(() => {
+        const fra = document.getElementById("fra");
+        fra.addEventListener("animationend", () => {
+            fra.setAttribute('style', 'visibility: hidden!important;');
+        });
+        const globo = document.getElementById("globo");
+        globo.addEventListener("animationend", () => {
+            globo.classList.add("hidden");
+        });
 
-<script>    
-    const target = document.getElementById("target");
-    let array = ["simple", "clear", "smart", "strong"];
-    let wordIndex = 0;
-    let letterIndex = 0;
+    }, 700);
 
-    const createLetter = () => {
-        const letter = document.createElement("span");
-        target.appendChild(letter);
 
-        letter.classList.add("letter");
-        letter.style.opacity = '0';
-        letter.style.animation = "anim 5s ease forwards";
-        letter.textContent = array[wordIndex][letterIndex];
 
-        setTimeout(() => {
-            letter.remove();
-        }, 2000);
-    };
+    document.addEventListener("DOMContentLoaded", () => {
+        const h2 = document.querySelector(".logo-container");
+        // Espera a que termine la animación
+        h2.addEventListener("animationend", () => {
+            h2.classList.add("hidden");
+        });
+        // Iniciar la animación (si es necesario)
+        h2.style.visibility = 'visible'; // Muestra el texto inicialmente, si es necesario
+    });
 
-    const loop = () => {
-        setTimeout(() => {
-            if (wordIndex >= array.length) {
-                wordIndex = 0;
-                letterIndex = 0;
-                loop();
-
-            } else if (letterIndex < array[wordIndex].length) {
-                createLetter();
-                letterIndex++;
-                loop();
-
-            } else {
-                letterIndex = 0;
-                wordIndex++;
-                setTimeout(() => {
-                    loop();
-                }, 2000);
-            }
-        }, 80);
+    // Función para ocultar el div con animación
+    function ocultarDiv() {
+        const div = document.getElementById('miDiv');
+        //div.classList.add('oculto'); // Añade la clase que activa la animación
     }
-    loop();
+        
+        setTimeout(() => {
+            const elemento = document.getElementById('h');
+            elemento.classList.add('scale-out-tr');
+        }, 7600); // 7000 milisegundos = 10 segundos
+    
+        setTimeout(() => {
+            const elemento = document.getElementById('fondo');
+            elemento.classList.add('scale-out-tr');
+        }, 7900); // 7000 milisegundos = 10 segundos
+
+
 </script>
